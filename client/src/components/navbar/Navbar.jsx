@@ -29,7 +29,7 @@ const Navbar = () => {
         <EmailOutlinedIcon/>
         <NotificationsOutlinedIcon/>
         <div className="user">
-          {/*<img src="https://cdn.www.elektron.se/media/wysiwyg/Syntakt-hero1.jpg" alt="Syntakt 12 track drum computer and synthesizer" />*/}
+          <img src="https://cdn.www.elektron.se/media/wysiwyg/Syntakt-hero1.jpg" alt="Syntakt 12 track drum computer and synthesizer" />
           <span>Mickeal jackson</span>
         </div>
       </div>
