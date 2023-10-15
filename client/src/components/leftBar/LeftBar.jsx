@@ -68,6 +68,51 @@ const LeftBar = () => {
             <img src={Courses} alt="images proposant des cours" />
             <span>Cours</span>
           </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          <div className="item">
+            <img src={Courses} alt="images proposant des cours" />
+            <span>Cours</span>
+          </div>
+          
         </div>
       </div>
     </div>
