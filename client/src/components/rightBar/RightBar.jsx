@@ -85,8 +85,8 @@ const RightBar = () => {
           </div>
         </div>
         <div className="item">
-        <span>amis en ligne</span>
-        <div className="user">
+          <span>amis en ligne</span>
+          <div className="user">
             <div className="userInfo">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Jackson_5_1974_%28Michael%29.jpg"
