@@ -1,6 +1,6 @@
 import "./rightBar.scss";
 
-const Navbar = () => {
+const RightBar = () => {
   return (
     <div className="rightBar">RightBar</div>
   )
