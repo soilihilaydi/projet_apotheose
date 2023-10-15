@@ -17,7 +17,7 @@ const LeftBar = () => {
       <div className="container">
         <div className="menu">
           <div className="user">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Jackson_5_1974_%28Michael%29.jpg" alt="Syntakt 12 track drum computer and synthesizer" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Jackson_5_1974_%28Michael%29.jpg" alt="photo de mickeal jackson" />
           <span>Mickeal jackson</span>
           </div>
           <div className="item">
