@@ -15,6 +15,7 @@ import { DarkModeContext } from "../../context/darkModeContext";
 const Navbar = () => {
 
   const { toggle, darkMode } = useContext(DarkModeContext);
+  const { currentUser } = useContext(AuthContext);
   return (
     <div className="navbar">
       <div className="left">
@@ -38,8 +39,11 @@ const Navbar = () => {
         <EmailOutlinedIcon/>
         <NotificationsOutlinedIcon/>
         <div className="user">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Jackson_5_1974_%28Michael%29.jpg" alt="Syntakt 12 track drum computer and synthesizer" />
-          <span>Mickeal jackson</span>
+        <img
+            src={currentUser.profilePic}
+            alt=""
+          />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

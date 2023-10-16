@@ -12,13 +12,19 @@ import Courses from "../../assets/12.png";
 
 
 const LeftBar = () => {
+
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="leftBar">
       <div className="container">
         <div className="menu">
           <div className="user">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Jackson_5_1974_%28Michael%29.jpg" alt="photo de mickeal jackson" />
-          <span>Mickeal jackson</span>
+          <img
+              src={currentUser.profilePic}
+              alt=""
+            />
+          <span>{currentUser.name}</span>
           </div>
           <div className="item">
             <img src={Friends} alt="image des amis" />

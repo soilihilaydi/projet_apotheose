@@ -6,6 +6,7 @@ import {
   RouterProvider,
   Route,
   Outlet,
+  Navigate,
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
@@ -15,13 +16,14 @@ import Profile from "./pages/profile/Profile";
 import "./style.scss";
 import React, { useContext } from 'react';
 import { DarkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/authContext";
+
 
 function App() {
 
-  const currentUser = true;
+  const {currentUser} = useContext(AuthContext);
 
   const { darkMode } = useContext(DarkModeContext);
-  console.log(darkMode)
 
 
   const Layout = ()=>{
@@ -50,7 +52,10 @@ function App() {
   const router = createBrowserRouter([
     {
       path:"/",
-      element:<ProtectedRoute><Layout/></ProtectedRoute>,
+      element:<ProtectedRoute>
+              <Layout/>
+              </ProtectedRoute>,
+              
       children:[
         {
           path:"/",
