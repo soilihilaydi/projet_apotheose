@@ -9,6 +9,8 @@ import Videos from "../../assets/9.png";
 import Messages from "../../assets/10.png";
 import Tutorials from "../../assets/11.png";
 import Courses from "../../assets/12.png";
+import { AuthContext } from "../../context/authContext";
+import { useContext } from "react";
 
 
 const LeftBar = () => {
