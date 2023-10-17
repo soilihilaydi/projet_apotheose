@@ -1,15 +1,15 @@
-@import "../../style.scss";
+
 
 .stories {
   display: flex;
   gap: 10px;
   height: 250px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 
 
   .story {
     flex: 1;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
 
