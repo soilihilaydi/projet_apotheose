@@ -6,9 +6,9 @@
   @include themify($themes) {
   flex: 3;
   position: sticky;
-  top: 71px;
+  top: 70px;
   height: calc(100vh - 70px);
-  margin: -9px;
+  
   overflow: scroll;
   background-color: themed("bgSoft");
 
