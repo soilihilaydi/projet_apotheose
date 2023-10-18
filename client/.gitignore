@@ -1,19 +1,24 @@
-# dependencies
+# Dépendances
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# Tests
 /coverage
 
-# production
+# Production
 /build
 
-# misc
+# Divers
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
 npm-debug.log*
+
+# Ignorer les fichiers de configuration spécifiques à ESLint
+.eslintcache
+
+# Ignorer les fichiers de build générés par Vite
+dist/
