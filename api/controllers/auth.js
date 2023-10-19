@@ -11,7 +11,7 @@ export const register = (req, res) => {
     if (err) return res.status(500).json(err);
 
     if (data.length > 0) {
-      return res.status(409).json("User already exists!");
+      return res.status(409).json("l'utilisateur existe déjà!");
     }
 
     // CRÉER UN NOUVEL UTILISATEUR
