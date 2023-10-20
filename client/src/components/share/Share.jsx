@@ -51,8 +51,8 @@ const Share = () => {
       <div className="container">
         <div className="top">
           <div className="left">
-           // avoir image profile fonctionne pas
-            <img src={"/upload/" + currentUser.profilePic} alt="" />
+           
+            <img src={"/upload/"+ currentUser.profilePic} alt="" />
             <input
               type="text"
               placeholder={`Quel sujet occupe tes pensées en ce moment ${currentUser.name}?`}

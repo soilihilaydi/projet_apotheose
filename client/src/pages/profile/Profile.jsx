@@ -12,6 +12,12 @@ import Posts from "../../components/posts/Posts"
 
 
 const Profile = () => {
+
+
+
+
+
+  
   return (
     <div className="profile">
       <div className="images">
