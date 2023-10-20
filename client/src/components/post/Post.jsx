@@ -8,6 +8,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "@mui/material";
 import Comments from "../comments/Comments";
 import { useState } from "react";
+import moment from "moment";
 
 const Post = ({post}) => {
 
@@ -27,7 +28,7 @@ const Post = ({post}) => {
             <div className="details">
               <Link to={`/profile/${post.userId}`} style={{ textDecoration: "none", color: "inherit" }}>
               <span>{post.name}</span>
-              <span className="date"> il y a 1 minute</span>
+              <span className="date">{moment(post.createdAt).fromNow()}</span>
               </Link>
             </div>
           </div>
@@ -35,7 +36,7 @@ const Post = ({post}) => {
         </div>
         <div className="content">
         <p>{post.desc}</p>
-          <img src={post.img} alt="image du multi effet d'elektron" />
+          <img src={"./upload/"+post.img} alt="image du multi effet d'elektron" />
         </div>
         <div className="info">
           <div className="item">
