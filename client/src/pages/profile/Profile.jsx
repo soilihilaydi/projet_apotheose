@@ -9,29 +9,37 @@ import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Posts from "../../components/posts/Posts"
+import { useQuery, useQueryClient, useMutation } from "react-query";
+import { makeRequest } from "../../axios";
+import { useLocation } from "react-router-dom";
 
 
 const Profile = () => {
 
+  const userId = parseInt(useLocation().pathname.split("/")[6]);
+
+  const { isLoading, error, data } = useQuery(["user"], () =>
+  makeRequest.get("/users/find/" + userId).then((res) => {
+    return res.data;
+  })
+);
+
+console.log(data)
 
 
 
 
-  
   return (
     <div className="profile">
-      <div className="images">
-        <img
-          src="https://w.forfun.com/fetch/e0/e0a002193fb507a2a270c5cb79de696c.jpeg?h=1200&r=0.5"
-          alt=""
-          className="cover"
-        />
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Jackson_5_1974_%28Michael%29.jpg"
-          alt=""
-          className="profilePic"
-        />
-      </div>
+                <div className="images">
+            {data && data.coverPic && (
+              <img src={"/upload/"+data.coverPic} alt="" className="cover" />
+            )}
+            {data && data.profilePic && (
+              <img src={"/upload/"+data.profilePic} alt="" className="profilePic" />
+            )}
+          </div>
+
       <div className="profileContainer">
         <div className="uInfo">
           <div className="left">
