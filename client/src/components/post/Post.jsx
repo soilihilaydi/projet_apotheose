@@ -9,13 +9,45 @@ import { Link } from "@mui/material";
 import Comments from "../comments/Comments";
 import { useState } from "react";
 import moment from "moment";
+import { useQuery, useQueryClient, useMutation } from "react-query";
+import { makeRequest } from "../../axios";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 const Post = ({post}) => {
 
   const [commentOpen, setCommentOpen] = useState(false);
+  const { currentUser } = useContext(AuthContext);
 
-     //TEMPORARY
-  const liked = false;
+  const { isLoading, error, data } = useQuery(["likes", post.id], () =>
+  makeRequest.get("/likes?postId=" + post.id).then((res) => {
+    return res.data;
+  })
+);
+
+const queryClient = useQueryClient();
+
+const mutation = useMutation(
+  (liked) => {
+    if (liked) return makeRequest.delete("/likes?postId=" + post.id);
+    return makeRequest.post("/likes", { postId: post.id });
+  },
+  {
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries(["likes"]);
+    },
+  }
+);
+
+
+
+
+const handleLike = () => {
+  mutation.mutate(data.includes(currentUser.id));
+};
+
+
 
 
 
@@ -39,9 +71,18 @@ const Post = ({post}) => {
           <img src={"/upload/" + post.img} alt="image du multi effet d'elektron" />
         </div>
         <div className="info">
-          <div className="item">
-          {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
-          12 J'aime
+        <div className="item">
+            {isLoading ? (
+              "loading"
+            ) : data.includes(currentUser.id) ? (
+              <FavoriteOutlinedIcon
+                style={{ color: "red" }}
+                onClick={handleLike}
+              />
+            ) : (
+              <FavoriteBorderOutlinedIcon onClick={handleLike} />
+            )}
+            {data?.length} J'aime
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
           <TextsmsOutlinedIcon />
