@@ -36,7 +36,7 @@ const Post = ({post}) => {
         </div>
         <div className="content">
         <p>{post.desc}</p>
-          <img src={"./upload/"+post.img} alt="image du multi effet d'elektron" />
+          <img src={"/upload/" + post.img} alt="image du multi effet d'elektron" />
         </div>
         <div className="info">
           <div className="item">
@@ -52,7 +52,7 @@ const Post = ({post}) => {
           Partager
           </div>
         </div>
-        {commentOpen && <Comments />}
+        {commentOpen && <Comments postId={post.id} />}
       </div>
     </div>
   );
