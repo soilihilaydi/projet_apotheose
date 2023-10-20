@@ -51,6 +51,7 @@ const Share = () => {
       <div className="container">
         <div className="top">
           <div className="left">
+           // avoir image profile fonctionne pas
             <img src={"/upload/" + currentUser.profilePic} alt="" />
             <input
               type="text"
